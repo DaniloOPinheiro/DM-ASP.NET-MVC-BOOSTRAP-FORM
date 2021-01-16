@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using DM_WEB.Models;
@@ -18,7 +14,13 @@ namespace DM_WEB.Controllers
             _logger = logger;
         }
 
+        [Route("")]
         public IActionResult Index()
+        {
+            return View();
+        }
+
+        public IActionResult Form()
         {
             return View();
         }
