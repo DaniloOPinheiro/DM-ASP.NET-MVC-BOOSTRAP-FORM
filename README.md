@@ -11,3 +11,5 @@
     > dotnet restore <br>
     > dotnet build <br>
     > dotnet run
+* Startar Projeto Sem Para-lo
+    > dotnet watch run
