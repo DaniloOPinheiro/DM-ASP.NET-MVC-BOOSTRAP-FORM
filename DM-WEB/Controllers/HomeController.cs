@@ -14,6 +14,8 @@ namespace DM_WEB.Controllers
             _logger = logger;
         }
 
+        [Route("")]
+        [Route("Home")]
         public IActionResult Index()
         {
             return View();
