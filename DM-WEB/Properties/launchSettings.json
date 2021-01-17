@@ -1,7 +1,11 @@
-﻿{
+{
   "iisSettings": {
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
+    "iis": {
+      "applicationUrl": "http://localhost/DM-WEB-DEV",
+      "sslPort": 0
+    },
     "iisExpress": {
       "applicationUrl": "http://localhost:24819",
       "sslPort": 44322
@@ -12,26 +16,26 @@
       "commandName": "IISExpress",
       "launchBrowser": true,
       "environmentVariables": {
-      "ASPNETCORE_ENVIRONMENT": "Development"
+        "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
     "DM_WEB-DEV": {
       "commandName": "Project",
-      "dotnetRunMessages": "false",
       "launchBrowser": true,
-      "applicationUrl": "http://localhost:5000",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
-      }
+      },
+      "dotnetRunMessages": "false",
+      "applicationUrl": "http://localhost:5000"
     },
     "DM_WEB-HOM": {
       "commandName": "Project",
-      "dotnetRunMessages": "false",
       "launchBrowser": true,
-      "applicationUrl": "http://localhost:6000",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Homologation"
-        }
-      }
+      },
+      "dotnetRunMessages": "false",
+      "applicationUrl": "http://localhost:6000"
     }
   }
+}

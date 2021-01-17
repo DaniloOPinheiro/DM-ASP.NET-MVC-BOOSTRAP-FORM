@@ -14,18 +14,17 @@ namespace DM_WEB.Controllers
             _logger = logger;
         }
 
-        [Route("")]
         public IActionResult Index()
         {
             return View();
         }
 
-        public IActionResult Form()
+        public IActionResult About()
         {
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult Documentation()
         {
             return View();
         }
