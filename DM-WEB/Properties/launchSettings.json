@@ -19,6 +19,13 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
+    "profiles-Homologation": {
+      "commandName": "IISExpress",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Homologation"
+      }
+    },
     "DM_WEB-DEV": {
       "commandName": "Project",
       "launchBrowser": true,
@@ -26,7 +33,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
       "dotnetRunMessages": "false",
-      "applicationUrl": "http://localhost:5000"
+      "applicationUrl": "https://localhost:5000"
     },
     "DM_WEB-HOM": {
       "commandName": "Project",
@@ -35,7 +42,7 @@
         "ASPNETCORE_ENVIRONMENT": "Homologation"
       },
       "dotnetRunMessages": "false",
-      "applicationUrl": "http://localhost:6000"
+      "applicationUrl": "https://localhost:6000"
     }
   }
 }

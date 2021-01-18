@@ -1,4 +1,6 @@
-﻿using DM_WEB.Data;
+﻿using System.Linq;
+using DM_WEB.Data;
+using DM_WEB.Enums;
 using DM_WEB.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -16,8 +18,11 @@ namespace DM_WEB.Controllers
             return View();
         }
 
-        public List<object> states = new List<object>
+        // public List<MaritialStatus> mss = new List<MaritialStatus> { };
+
+        private List<object> states = new List<object>
         {
+                new {Initials = "AC", Name = "-- Selecione --" },
                 new {Initials = "AC", Name = "Acre" },
                 new {Initials = "AL", Name = "Alagoas" },
                 new {Initials = "AP", Name = "Amapa" },
@@ -45,25 +50,46 @@ namespace DM_WEB.Controllers
                 new {Initials = "SP", Name = "Sao Paulo" },
                 new {Initials = "SE", Name = "Sergipe" },
                 new {Initials = "TO", Name = "Tocantins" }
+         };
+
+        private List<object> mss = new List<object>
+        {
+            "-- Selecione --",
+            "Solteiro(a)",
+            "Casado(a)",
+            "Divorciado(a)",
+            "Viuvo(a)",
+            "Separado(a)"
         };
 
-        
         public IActionResult Register()
         {
-            // ViewBag.States = new SelectList(states, "Initials", "Name");
+            ViewBag.MaritalStatus = new SelectList(mss, "Name");
+            ViewBag.States = new SelectList(states, "Initials", "Name");
+
             return View();
         }
 
+        [HttpGet]
+        public IActionResult People()
+        {
+            var listPerson = db.People;
+            
+            return View(listPerson.ToList());
+        }
+
         [HttpPost]
-        public IActionResult RegisterPerson(People people)
+        public IActionResult RegisterPerson(People model)
         {
             if (!ModelState.IsValid)
             {
+                ViewBag.MaritalStatus = new SelectList(mss, "Name");
                 ViewBag.States = new SelectList(states, "Initials", "Name");
-                return View("Register", people);
+
+                return View("Register", model);
             }
 
-            db.People.Add(people);
+            db.People.Add(model);
             db.SaveChanges();
 
             return RedirectToAction("Success");
