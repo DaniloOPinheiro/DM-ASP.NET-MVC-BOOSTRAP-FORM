@@ -13,22 +13,22 @@ namespace DM_WEB.Models
         [Remote("ValidarCPF", "Pessoas", ErrorMessage = "Esse CPF ja foi cadastrado.")]
         public string CPF { get; set; }
 
-        [Required(ErrorMessage = "Preencha o nome completo.")]
+        [Required(ErrorMessage = "Preencha o Nome Completo.")]
         [MaxLength(100, ErrorMessage = "O nome deve ter ate {1} caracteres.")]
         public string Name { get; set; }
 
-        [Required(ErrorMessage = "Preencha a data de nascimento.")]
+        [Required(ErrorMessage = "Preencha a Data de Nascimento.")]
         [Display(Name = "Data de Nascimento")]
         public DateTime DateOfBirth { get; set; }
 
-        [Required(ErrorMessage = "Preencha o sexo.")]
+        [Required(ErrorMessage = "Preencha o Sexo.")]
         public Sex Sex { get; set; }
 
-        [Required(ErrorMessage = "Selecione um estado civil.")]
+        [Required(ErrorMessage = "Selecione um Estado Civil.")]
         [Display(Name = "Estado Civil")]
         public MaritialStatus MaritalStatus { get; set; }
 
-        [Required(ErrorMessage = "Preencha o estado de residencia.")]
+        [Required(ErrorMessage = "Preencha o Estado de Residencia.")]
         [RegularExpression("(AC|AL|AP|AM|BA|CE|DF|ES|GO|MA|MT|MS|MG|PA|PB|PR|PE|PI|RJ|RN|RS|RO|RR|SC|SP|SE|TO)",
             ErrorMessage = "Informe um estado valido.")]
         [Display(Name = "Estado")]
@@ -71,12 +71,12 @@ namespace DM_WEB.Models
         //     }
         // }
 
-        [Required(ErrorMessage = "Preencha a cidade de residencia.")]
+        [Required(ErrorMessage = "Preencha a Cidade de Residencia.")]
         [MaxLength(50, ErrorMessage = "O nome da cidade deve ter ate 50 caracteres.")]
         [Display(Name = "Cidade")]
         public string City { get; set; }
 
-        [Required(ErrorMessage = "Preencha o endereco residencial.")]
+        [Required(ErrorMessage = "Preencha o Endereco Residencial.")]
         [MaxLength(100, ErrorMessage = "O endereco residencial deve ter ate {1} caracteres.")]
         [Display(Name = "Logradouro")]
         public string PublicPlace { get; set; }
